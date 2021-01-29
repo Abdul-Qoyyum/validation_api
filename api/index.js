@@ -71,5 +71,7 @@ app.use((err,req,res,next) => {
          });
 });
 
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 3000;
 
-app.listen(3000,() => console.log("App is listening on port 3000"));
+app.listen(port,() => console.log(`App is listening on port ${port}`));
