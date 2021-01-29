@@ -59,13 +59,13 @@ let secondFieldLevel = excludeFirst.join(".");
 req.body.fieldLevels = [fieldLevels[0],secondFieldLevel];
 
 //specify the allowed conditions
-const conditions = ["et","neq","gt","gte","contains"];
+const conditions = ["eq","neq","gt","gte","contains"];
 
 //check if the supplied condition is available
   if(!(conditions.indexOf(condition) >= 0)){
     return res.status(400).json({
       condition : {
-        message : `${condition} condition is invalid.`,
+        message : `condition ${condition} is invalid.`,
         status : "error",
         data : null
        }
